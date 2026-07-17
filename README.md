@@ -50,10 +50,7 @@ npm run lint     # Check code quality with ESLint
 3. All bracketed pieces are flipped to your colour.
 4. If you have no valid move, your turn is passed. The game ends when the board is full or neither player can move; the player with the most pieces wins.
 
-## What I learned
 
-This project was an opportunity to turn game rules into reusable front-end logic: calculating legal moves, tracing capture paths in eight directions, keeping the UI synchronized with state, and handling game-end edge cases. I also focused on visual hierarchy, responsive behaviour, and keyboard-friendly interactions to make the game feel complete rather than just functional.
+## Author
 
----
-
-Built by [Lanzhi Zhang](https://github.com/Dennylunch)
+**Lanzhi Zhang** — [@Dennylunch](https://github.com/Dennylunch)
