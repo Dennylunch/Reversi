@@ -1,0 +1,81 @@
+Stored state:
+Original board array for rendering and flipping pieces
+
+
+
+
+When the user clicks a square:
+  Check whether the square is null  --> if isEmpty({label}) == null
+                              
+  get_intermediate_locations(position,newposition)
+ Output the positions of all pieces trapped between two pieces
+
+ get_reversed_positions(board,piece,position)
+Output which pieces will be flipped
+
+
+
+let locations = [];
+  const max_p = Math.max(position, newPosition);
+  let min_p = Math.min(position, newPosition);
+  const differences = max_p - min_p;
+
+  
+  if ((differences <= 7) && (differences >= 1)) {
+    // The two pieces are in the same row
+    let waitToCheck = [];
+    let column = [];
+
+    while (min_p < (max_p-1)) {
+      min_p += 1;
+      waitToCheck.push(min_p);
+      column.push((min_p % 8));
+    }
+    
+    const sortedColumn = column.slice().sort();  
+    if (sortedColumn == column) {
+      locations = waitToCheck.slice();
+    }
+
+  } else if (((differences % 8) == 0) && (differences > 8)) {
+    // The two pieces are in the same column
+    while (min_p < (max_p-8)) {
+      min_p += 8;
+      locations.push(min_p);
+    }
+
+  } else if (((differences % 9) == 0) && (differences > 9)) {
+    // The two pieces are on the same diagonal, sloping down to the right
+    let waitToCheck = [];
+    let column = [];
+
+    while (min_p < (max_p-9)) {
+      min_p += 9;
+      waitToCheck.push(min_p);
+      column.push((min_p % 8));
+    }
+    
+    const sortedColumn = column.slice().sort();  
+    if (sortedColumn == column) {
+      locations = waitToCheck.slice();
+    }
+
+  } else if (((differences % 7) == 0) && (differences > 7)) {
+    // The two pieces are on the same diagonal, sloping down to the left
+    let waitToCheck = [];
+    let column = [];
+
+    while (min_p < (max_p-7)) {
+      min_p += 7;
+      waitToCheck.push(min_p);
+      column.push((min_p % 8));
+    }
+    
+    const sortedColumn = column.slice().sort();  
+    if (sortedColumn == column) {
+      locations = waitToCheck.slice();
+    }
+  }
+
+  return locations
+}
