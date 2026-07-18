@@ -2,6 +2,9 @@
 
 A polished, browser-based implementation of the classic **Reversi (Othello)** strategy game. Built as a front-end project to demonstrate React state management, game-rule modelling, and responsive UI design.
 
+**[Live Demo](https://reversi-sage.vercel.app/)**
+
+
 ## Highlights
 
 - Play a complete two-player Reversi game on an 8 × 8 board
